@@ -9,9 +9,10 @@
 package com.example.pandastock.service;
 
 import com.example.pandastock.controller.CreateProductDto;
-import com.example.pandastock.controller.UpdateProductDTO;
+import com.example.pandastock.controller.UpdateProductDto;
 import com.example.pandastock.entity.Product;
 import com.example.pandastock.repository.ProductRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
@@ -38,7 +39,7 @@ import java.util.UUID;
 @Service
 public class ProductService {
 
-    private ProductRepository productRepository;
+    private final ProductRepository productRepository;
 
     // Aqui a nossa injeção de dependências
     public ProductService(ProductRepository productRepository) {
@@ -80,7 +81,7 @@ public class ProductService {
 
     //UPDATE BY ID
     public void updateProductById(String productId,
-                                  UpdateProductDTO updateProductDTO) {
+                                  UpdateProductDto updateProductDTO) {
 
         var id = UUID.fromString(productId);
         var productExists = productRepository.findById(id);

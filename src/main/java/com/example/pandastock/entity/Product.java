@@ -48,8 +48,8 @@ public class Product {
     /*
        Construtor vazio exigido pelo JPA.
        Usado pelo Hibernate para instanciar o objeto
-       ao recuperar dados do banco e preencher seus atributos
-       no novo objeto instanciado dessa classe.
+       ao recuperar dados do banco e preencher os seus
+       atributos no novo objeto instanciado dessa classe.
     */
     public Product() {
 
